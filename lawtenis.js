@@ -1,14 +1,14 @@
-let pNombre, pApellido, pDni;
+let pNombre, pApellido, pDni; // Acá no hace falta q agregues la p al nombre de la variable porque los estas declarando fuera, no son parametros son variables
 
-function Persona(pNombre,pApellido,pDni,pPeso,pAltura){
+function Persona(pNombre,pApellido,pDni,pPeso,pAltura){ // lo mismo q arriba, lo de pNombre se usa solo a modo educativo, no es necesario ni lo vas a ver en codigo productivo
   this.nombre = pNombre;
   this.apellido = pApellido;
   this.dni = pDni;
   this.peso = pPeso;
   this.altura = pAltura;
   
-  this.mostrar = function(){
-    let persona = new Persona(nombre,apellido,dni);
+  this.mostrar = function(){ // si la función es mostrar, no deberias crear una instancia nueva, porque la funcion es propia de la instancia, la linea 11 esta de más 
+    let persona = new Persona(nombre,apellido,dni); 
     console.log(this.nombre,this.apellido);
   }
 }
@@ -19,7 +19,7 @@ function Persona(pNombre,pApellido,pDni,pPeso,pAltura){
   function guardarNombre() {
   pNombre = prompt("ingrese nombre");
   pApellido = prompt("ingrese apellido");
-  pDni = parseInt(prompt("ingrese DNI"));
+  pDni = parseInt(prompt("ingrese DNI")); // Al DNI lo haria String nomas, si no vas a tener q validar los puntos 
   
   alert(
     "Los datos ingresados son:" + " " + pNombre + " " + pApellido + " " + pDni
@@ -75,8 +75,8 @@ function cobroTurno() {
 
   function revisarDato(dni) {
   
-          while (nombre == 0, apellido == 0, dni == 0 || isNaN(dni) == true) {
-              if (nombre == 0) {
+          while (nombre == 0, apellido == 0, dni == 0 || isNaN(dni) == true) { // Los String tenes q comparar con "" no con 0, tampoco deberia estar en un while, esta funcion 
+              if (nombre == 0) {                                               // deberia ejecutarse por un evento de cambio en un inputText o al dar clic al boton  
                   nombre = prompt("Debe ingresar su nombre");
               }
               if (apellido == 0) {
